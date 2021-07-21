@@ -1,0 +1,82 @@
+package logico;
+
+public class SolicitudEmpleado {
+	
+
+	private String id;
+	private person aplicante;
+	private boolean estadocivil;
+	private float salariominimo;
+	private list<string> lenguajes;
+	private int hrsdetrabajo;
+	private boolean dispviajar;
+	private boolean dispmudarse;
+	private boolean licencia;
+	public static int cod = 0;
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public person getAplicante() {
+		return aplicante;
+	}
+	public void setAplicante(person aplicante) {
+		this.aplicante = aplicante;
+	}
+	public boolean isEstadocivil() {
+		return estadocivil;
+	}
+	public void setEstadocivil(boolean estadocivil) {
+		this.estadocivil = estadocivil;
+	}
+	public float getSalariominimo() {
+		return salariominimo;
+	}
+	public void setSalariominimo(float salariominimo) {
+		this.salariominimo = salariominimo;
+	}
+	public list<string> getLenguajes() {
+		return lenguajes;
+	}
+	public void setLenguajes(list<string> lenguajes) {
+		this.lenguajes = lenguajes;
+	}
+	public int getHrsdetrabajo() {
+		return hrsdetrabajo;
+	}
+	public void setHrsdetrabajo(int hrsdetrabajo) {
+		this.hrsdetrabajo = hrsdetrabajo;
+	}
+	public boolean isDispviajar() {
+		return dispviajar;
+	}
+	public void setDispviajar(boolean dispviajar) {
+		this.dispviajar = dispviajar;
+	}
+	public boolean isDispmudarse() {
+		return dispmudarse;
+	}
+	public void setDispmudarse(boolean dispmudarse) {
+		this.dispmudarse = dispmudarse;
+	}
+	public boolean isLicencia() {
+		return licencia;
+	}
+	public void setLicencia(boolean licencia) {
+		this.licencia = licencia;
+	}
+	public static int getCod() {
+		return cod;
+	}
+	public static void setCod(int cod) {
+		SolicitudEmpleado.cod = cod;
+	}
+	
+	
+
+}
