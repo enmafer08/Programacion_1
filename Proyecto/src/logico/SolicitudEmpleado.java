@@ -23,11 +23,11 @@ public class SolicitudEmpleado {
 		this.id = id;
 	}
 
-	public person getAplicante() {
+	public Persona getAplicante() {
 		return aplicante;
 	}
 
-	public void setAplicante(person aplicante) {
+	public void setAplicante(Persona aplicante) {
 		this.aplicante = aplicante;
 	}
 
@@ -47,11 +47,11 @@ public class SolicitudEmpleado {
 		this.salariominimo = salariominimo;
 	}
 
-	public list<string> getLenguajes() {
+	public List<String> getLenguajes() {
 		return lenguajes;
 	}
 
-	public void setLenguajes(list<string> lenguajes) {
+	public void setLenguajes(List<String> lenguajes) {
 		this.lenguajes = lenguajes;
 	}
 
