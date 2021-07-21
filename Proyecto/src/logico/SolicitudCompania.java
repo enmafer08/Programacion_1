@@ -12,16 +12,16 @@ public class SolicitudCompania {
 	private float salario_minimo;
 	private boolean estado;
 	private List<String> lenguajes;
-	private boolean viajes;
-	private boolean movimientos;
+	private boolean disviajes;
+	private boolean dismudarse;
 	private boolean licencia;
 	private int horas_de_trabajo;
 	public static int cod = 0;
 	
 	
-	public SolicitudCompania(String id, Compania compania, String tipo_de_empleado, String habilidades_requeridas,
-			int cantidad, float salario_minimo, boolean estado, List<String> lenguajes, boolean viajes,
-			boolean movimientos, boolean licencia, int horas_de_trabajo) {
+	private SolicitudCompania(String id, Compania compania, String tipo_de_empleado, String habilidades_requeridas,
+			int cantidad, float salario_minimo, boolean estado, List<String> lenguajes, boolean disviajes,
+			boolean dismudarse, boolean licencia, int horas_de_trabajo) {
 		super();
 		this.id = id;
 		this.compania = compania;
@@ -31,8 +31,8 @@ public class SolicitudCompania {
 		this.salario_minimo = salario_minimo;
 		this.estado = estado;
 		this.lenguajes = lenguajes;
-		this.viajes = viajes;
-		this.movimientos = movimientos;
+		this.disviajes = disviajes;
+		this.dismudarse = dismudarse;
 		this.licencia = licencia;
 		this.horas_de_trabajo = horas_de_trabajo;
 	}
@@ -118,23 +118,23 @@ public class SolicitudCompania {
 	}
 
 
-	public boolean isViajes() {
-		return viajes;
+	public boolean isDisviajes() {
+		return disviajes;
 	}
 
 
-	public void setViajes(boolean viajes) {
-		this.viajes = viajes;
+	public void setDisviajes(boolean disviajes) {
+		this.disviajes = disviajes;
 	}
 
 
-	public boolean isMovimientos() {
-		return movimientos;
+	public boolean isDismudarse() {
+		return dismudarse;
 	}
 
 
-	public void setMovimientos(boolean movimientos) {
-		this.movimientos = movimientos;
+	public void setDismudarse(boolean dismudarse) {
+		this.dismudarse = dismudarse;
 	}
 
 
@@ -156,6 +156,9 @@ public class SolicitudCompania {
 	public void setHoras_de_trabajo(int horas_de_trabajo) {
 		this.horas_de_trabajo = horas_de_trabajo;
 	}
+	
+	
+	
 	
 	
 	

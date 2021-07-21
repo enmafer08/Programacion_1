@@ -16,7 +16,7 @@ public class Persona {
 	protected String estadotrabajo;
 	
 	
-	public Persona(String id, String nombre, String apellido, String fecha, String direccion, String correo,
+	private Persona(String id, String nombre, String apellido, String fecha, String direccion, String correo,
 			String provincia, String ciudad, String genero, String estadocivil, String telefono, String estadotrabajo) {
 		super();
 		this.id = id;
