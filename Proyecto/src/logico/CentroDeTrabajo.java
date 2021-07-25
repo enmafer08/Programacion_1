@@ -188,6 +188,64 @@ public class CentroDeTrabajo implements Serializable {
 		return allTec;
 	}
 	
+	public List<Persona> getTrabajadores()
+	{
+		List<Persona> allTrabajadores = new ArrayList<>();
+		for(Persona g :mipersona)
+		{
+			if(g instanceof Trabajador)
+			{
+				allTrabajadores.add((Trabajador) g);
+			}
+		}
+		return allTrabajadores;
+	}
 	
+	public void modifPerdona(Persona mod, Persona aux)
+	{
+		int indice = mipersona.indexOf(mod);
+		mipersona.add(indice, aux);
+		mipersona.remove(mod);
+	}
+	
+	public int getsolicitudempleadocompletada()
+	{
+		int i=0;
+		SolicitudEmpleado aux = null;
+		for(SolicitudEmpleado se : misolicitud_e)
+		{
+			if(se.isestado() == false))
+			{
+				i++;
+			}
+		}
+		return i;
+	}
+	
+	public List<SolicitudEmpleado> getestudiante()
+	{
+		List<SolicitudEmpleado> solicitudestudiante = new ArrayList<>();
+		for(SolicitudEmpleado h : misolicitud_e)
+		{
+			if(h.getAplicante() instanceof Estudiante & h.isestado())
+			{
+				solicitudestudiante.add(h);
+			}
+		}
+		return solicitudestudiante;
+	}
+	
+	public int getcantsolicestudianteporcompania()
+	{
+		int cant=0;
+		for(SolicitudCompania i : misolicitud_c)
+		{
+			if (i.getTipo_de_empleado().equalsIgnoreCase("Universitario"))
+			{
+				cant++;
+			}
+		}
+		return cant;
+	}
 	
 }
