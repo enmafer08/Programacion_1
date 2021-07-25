@@ -214,7 +214,7 @@ public class CentroDeTrabajo implements Serializable {
 		SolicitudEmpleado aux = null;
 		for(SolicitudEmpleado se : misolicitud_e)
 		{
-			if(se.isestado() == false))
+			if(se.isestado() == false)
 			{
 				i++;
 			}
@@ -248,22 +248,15 @@ public class CentroDeTrabajo implements Serializable {
 		return cant;
 	}
 	
-	public List<Persona> getTrabajadores(){
-		List<Persona> allTrabajadores = new ArrayList<>();
-		for(Persona p: mipersona) {
-			if(p instanceof Trabajador){
-				allTrabajadores.add(p);
-			}
-			
-		}
-		return allTrabajadores;
-	}
+	
 	
 	public void modificarPersona(Persona mod, Persona aux) {
 		int index = mipersona.indexOf(mod);
 		mipersona.add(index, aux);
 		mipersona.remove(mod);
 	}
+	
+	
 	
 	
 	
