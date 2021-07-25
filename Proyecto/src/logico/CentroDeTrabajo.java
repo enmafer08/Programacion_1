@@ -190,4 +190,23 @@ public class CentroDeTrabajo implements Serializable {
 	
 	
 	
+	public List<Persona> getTrabajadores(){
+		List<Persona> allTrabajadores = new ArrayList<>();
+		for(Persona p: mipersona) {
+			if(p instanceof Trabajador){
+				allTrabajadores.add(p);
+			}
+			
+		}
+		return allTrabajadores;
+	}
+	
+	public void modificarPersona(Persona mod, Persona aux) {
+		int index = mipersona.indexOf(mod);
+		mipersona.add(index, aux);
+		mipersona.remove(mod);
+	}
+	
+	
+	
 }
