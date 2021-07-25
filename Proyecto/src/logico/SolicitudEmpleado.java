@@ -1,9 +1,11 @@
 package logico;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class SolicitudEmpleado {
+public class SolicitudEmpleado implements Serializable {
 
+	private static final long serialVersionUID = 9172098800438365223L;
 	private String id;
 	private Persona aplicante;
 	private boolean estadocivil;

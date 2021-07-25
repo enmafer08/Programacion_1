@@ -1,7 +1,12 @@
 package logico;
+import java.io.Serializable;
 
-public class Compania {
+
+public class Compania implements Serializable{
 	
+	
+	
+	private static final long serialVersionUID = 5580731429904371715L;
 	private String rnc;
 	private String nombre;
 	private String localidad;

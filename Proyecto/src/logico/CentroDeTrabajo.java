@@ -1,9 +1,13 @@
 package logico;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.io.Serializable;
 
-public class CentroDeTrabajo {
+public class CentroDeTrabajo implements Serializable {
 
+	
+	private static final long serialVersionUID = -141755586509459357L;
 	private List<Compania> micompania;
 	private List<Persona> mipersona;
 	private List<SolicitudEmpleado> misolicitud_e;

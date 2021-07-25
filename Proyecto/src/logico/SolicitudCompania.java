@@ -1,9 +1,12 @@
 package logico;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class SolicitudCompania {
+public class SolicitudCompania implements Serializable {
 
+	
+	private static final long serialVersionUID = 4923035159141681341L;
 	private String id;
 	private Compania compania;
 	private String tipo_de_empleado;
