@@ -8,7 +8,7 @@ public class SolicitudEmpleado implements Serializable {
 	private static final long serialVersionUID = 9172098800438365223L;
 	private String id;
 	private Persona aplicante;
-	private boolean estadocivil;
+	private boolean estado;
 	private float salariominimo;
 	private List<String> lenguajes;
 	private int hrsdetrabajo;
@@ -16,7 +16,6 @@ public class SolicitudEmpleado implements Serializable {
 	private boolean dispmudarse;
 	private boolean licencia;
 	public static int cod = 0;
-
 	public String getId() {
 		return id;
 	}
@@ -33,12 +32,12 @@ public class SolicitudEmpleado implements Serializable {
 		this.aplicante = aplicante;
 	}
 
-	public boolean isEstadocivil() {
-		return estadocivil;
+	public boolean isestado() {
+		return estado;
 	}
 
-	public void setEstadocivil(boolean estadocivil) {
-		this.estadocivil = estadocivil;
+	public void setestado(boolean estado) {
+		this.estado = estado;
 	}
 
 	public float getSalariominimo() {
@@ -97,12 +96,12 @@ public class SolicitudEmpleado implements Serializable {
 		SolicitudEmpleado.cod = cod;
 	}
 
-	private SolicitudEmpleado(String id, Persona aplicante, boolean estadocivil, float salariominimo,
+	private SolicitudEmpleado(String id, Persona aplicante, boolean estado, float salariominimo,
 			List<String> lenguajes, int hrsdetrabajo, boolean dispviajar, boolean dispmudarse, boolean licencia) {
 		super();
 		this.id = id;
 		this.aplicante = aplicante;
-		this.estadocivil = estadocivil;
+		this.estado = estado;
 		this.salariominimo = salariominimo;
 		this.lenguajes = lenguajes;
 		this.hrsdetrabajo = hrsdetrabajo;
