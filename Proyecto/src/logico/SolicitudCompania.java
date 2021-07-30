@@ -22,8 +22,8 @@ public class SolicitudCompania implements Serializable {
 	public static int cod = 0;
 	
 	
-	private SolicitudCompania(String id, Compania compania, String tipo_de_empleado, String habilidades_requeridas,
-			int cantidad, float salario_minimo, boolean estado, List<String> lenguajes, boolean disviajes,
+	public SolicitudCompania(String id, Compania compania, String tipo_de_empleado, String habilidades_requeridas,
+			int cantidad, float salario_minimo, List<String> lenguajes, boolean disviajes,
 			boolean dismudarse, boolean licencia, int horas_de_trabajo) {
 		super();
 		this.id = id;
@@ -32,7 +32,7 @@ public class SolicitudCompania implements Serializable {
 		this.habilidades_requeridas = habilidades_requeridas;
 		this.cantidad = cantidad;
 		this.salario_minimo = salario_minimo;
-		this.estado = estado;
+		this.estado = true;
 		this.lenguajes = lenguajes;
 		this.disviajes = disviajes;
 		this.dismudarse = dismudarse;

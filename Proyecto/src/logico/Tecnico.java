@@ -14,12 +14,11 @@ public class Tecnico extends Persona implements Serializable {
 	private int anosdeexperiencia;
 	
 	
-	public Tecnico(String id, String nombre, String apellido, String fecha, String direccion, String correo,
-			String provincia, String ciudad, String genero, String estadocivil, String telefono, String estadotrabajo,
-			String area, String institucion, int anosdeexperiencia) {
+	public Tecnico(String id, String nombre, String apellido, Date fecha, String direccion, String correo,
+			String provincia, String ciudad, String genero, String estadocivil, String telefono,int anosdeexperiencia,
+			String area, String institucion) {
 		
-		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono,
-				estadotrabajo);
+		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono);
 		this.area = area;
 		this.institucion = institucion;
 		this.anosdeexperiencia = anosdeexperiencia;

@@ -15,15 +15,24 @@ public class CentroDeTrabajo implements Serializable {
 	private static CentroDeTrabajo centrodetrabajo = null;
 	
 	
-	private CentroDeTrabajo(List<Compania> micompania, List<Persona> mipersona, List<SolicitudEmpleado> misolicitud_e,
-			List<SolicitudCompania> misolicitud_c) {
+	private CentroDeTrabajo() {
 		super();
-		this.micompania = micompania;
-		this.mipersona = mipersona;
-		this.misolicitud_e = misolicitud_e;
-		this.misolicitud_c = misolicitud_c;
+		this.micompania = new ArrayList<Compania>();
+		this.mipersona = new ArrayList<Persona>();
+		this.misolicitud_e = new ArrayList<SolicitudEmpleado>();
+		this.misolicitud_c = new ArrayList<SolicitudCompania>();
+	}
+	
+	public static CentroDeTrabajo getInstance() {
+		if(centrodetrabajo == null) {
+			centrodetrabajo = new CentroDeTrabajo();
+		}
+		return centrodetrabajo;
 	}
 
+	public static void setInstance(CentroDeTrabajo centrodetrabajo) {
+		CentroDeTrabajo.centrodetrabajo = centrodetrabajo;
+	}
 
 	public List<Compania> getMicompania() {
 		return micompania;
@@ -255,6 +264,18 @@ public class CentroDeTrabajo implements Serializable {
 		mipersona.add(index, aux);
 		mipersona.remove(mod);
 	}
+	
+	public SolicitudEmpleado buscarEmpleadoreqPorPersona(Persona person1) {
+		SolicitudEmpleado ok=null;
+		for(SolicitudEmpleado er: misolicitud_e) {
+			if(er.getAplicante().getId().equalsIgnoreCase(person1.getId())) {
+				ok=er;
+				break;
+			}
+		}
+		return ok;
+	}
+	
 	
 	
 	

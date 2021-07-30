@@ -14,12 +14,11 @@ public class Estudiante extends Persona implements Serializable{
 
 	
 
-	public Estudiante(String id, String nombre, String apellido, String fecha, String direccion, String correo,
-			String provincia, String ciudad, String genero, String estadocivil, String telefono, String estadotrabajo,
+	public Estudiante(String id, String nombre, String apellido, Date fecha, String direccion, String correo,
+			String provincia, String ciudad, String genero, String estadocivil, String telefono,
 			String universidad, String carrera) {
 		
-		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono,
-				estadotrabajo);
+		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono);
 		this.universidad = universidad;
 		this.carrera = carrera;
 	}

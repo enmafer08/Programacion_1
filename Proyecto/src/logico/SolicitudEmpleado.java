@@ -96,12 +96,11 @@ public class SolicitudEmpleado implements Serializable {
 		SolicitudEmpleado.cod = cod;
 	}
 
-	private SolicitudEmpleado(String id, Persona aplicante, boolean estado, float salariominimo,
+	public SolicitudEmpleado(String id, Persona aplicante, float salariominimo,
 			List<String> lenguajes, int hrsdetrabajo, boolean dispviajar, boolean dispmudarse, boolean licencia) {
 		super();
 		this.id = id;
 		this.aplicante = aplicante;
-		this.estado = estado;
 		this.salariominimo = salariominimo;
 		this.lenguajes = lenguajes;
 		this.hrsdetrabajo = hrsdetrabajo;
