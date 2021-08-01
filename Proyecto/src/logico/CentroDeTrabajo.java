@@ -210,7 +210,7 @@ public class CentroDeTrabajo implements Serializable {
 		return allTrabajadores;
 	}
 	
-	public void modifPerdona(Persona mod, Persona aux)
+	public void modifPersona(Persona mod, Persona aux)
 	{
 		int indice = mipersona.indexOf(mod);
 		mipersona.add(indice, aux);
