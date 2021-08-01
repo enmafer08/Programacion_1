@@ -31,13 +31,13 @@ public class BuscarIdV extends JDialog {
 	private JTextField textodeID;
 	private JLabel lbl_titulo;
 	private JButton botoneliminar;
-	private String mi_ID;
+	private String mi_Id;
 	private int miestado;
 
 
 	public BuscarIdV(String id,CentroDeTrabajo CentroDeTrabajo,int status) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarIdV.class.getResource("/logo.png")));
-		this.mi_ID=id;
+		this.mi_Id=id;
 		this.miestado=status;
 		setTitle("Eliminar");
 		setBounds(100, 100, 445, 198);
@@ -92,12 +92,12 @@ public class BuscarIdV extends JDialog {
 			botoneliminar = new JButton("Eliminar");
 			botoneliminar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					mi_ID=textodeID.getText();
+					mi_Id=textodeID.getText();
 					if(textodeID.getText().equalsIgnoreCase(""))
 						JOptionPane.showMessageDialog(null, "No deje el campo vacío", "Problema de búsqueda", JOptionPane.CLOSED_OPTION);	
-					else if(CentroDeTrabajo.buscarcompaniaporid(mi_ID)==null && (status==0 || status==2 || status==5))
+					else if(CentroDeTrabajo.buscarcompaniaporid(mi_Id)==null && (status==0 || status==2 || status==5))
 						JOptionPane.showMessageDialog(null, "Esta empresa no existe", "Empresa no encontrada", JOptionPane.CLOSED_OPTION);
-					else if(CentroDeTrabajo.buscarpersonaporid(mi_ID)==null && (status==1||status==3 || status==4))
+					else if(CentroDeTrabajo.buscarpersonaporid(mi_Id)==null && (status==1||status==3 || status==4))
 						JOptionPane.showMessageDialog(null, "Esta persona no existe", "Persona no encontrada", JOptionPane.CLOSED_OPTION);
 					else 
 						dispose();
@@ -115,7 +115,7 @@ public class BuscarIdV extends JDialog {
 			btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			btnSalir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					mi_ID="";
+					mi_Id="";
 					dispose();
 				}
 			});
@@ -125,7 +125,7 @@ public class BuscarIdV extends JDialog {
 	}
 	
 	public String getID() {
-		return this.mi_ID;
+		return this.mi_Id;
 	}
 
 	private void setTitleAndLabel(int status) {
