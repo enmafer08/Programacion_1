@@ -214,7 +214,7 @@ public class CentroDeTrabajo implements Serializable {
 		SolicitudEmpleado aux = null;
 		for(SolicitudEmpleado se : misolicitud_e)
 		{
-			if(se.isestado() == false))
+			if(se.isestado() == false)
 			{
 				i++;
 			}
