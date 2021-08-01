@@ -108,5 +108,26 @@ public class SolicitudEmpleado implements Serializable {
 		this.dispmudarse = dispmudarse;
 		this.licencia = licencia;
 	}
+	
+	public boolean HabilidadesEx(String HabilidadesReq) {
+		if(aplicante instanceof Estudiante) {
+			Estudiante Estudiante=(Estudiante)aplicante;
+			if(Estudiante.getCarrera().equalsIgnoreCase(HabilidadesReq))
+				return true;
+		}
+		else if(aplicante instanceof Tecnico) {
+			Tecnico Tecnico=(Tecnico)aplicante;
+			if(Tecnico.getArea().equalsIgnoreCase(HabilidadesReq))
+				return true;
+		}
+		else {
+			Trabajador Trabajador=(Trabajador)aplicante;
+			for(String s: Trabajador.getHabilidades()) {
+				if(s.equalsIgnoreCase(HabilidadesReq))
+					return true;
+			}
+		}
+		return false;
+	}
 
 }

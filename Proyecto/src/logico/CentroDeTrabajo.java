@@ -88,7 +88,7 @@ public class CentroDeTrabajo implements Serializable {
 		this.micompania.add(comp);
 	}
 	
-	public void modifcompania (Compania aux, Compania modif)
+	public void modifcompania (Compania aux, 	Compania modif)
 	{
 		int pos = micompania.indexOf(modif);
 		micompania.add(pos, aux);
@@ -276,7 +276,196 @@ public class CentroDeTrabajo implements Serializable {
 		return ok;
 	}
 	
+	public int getSolicitudDeEmpleadoLog() {
+		int cant=0;
+		SolicitudEmpleado aux=null;
+		for(SolicitudEmpleado er: misolicitud_e) {
+			if(er.isestado()==false)
+				cant++;
+				
+		}
+		return cant;
+	}
 	
+	public List<SolicitudEmpleado> getSolicitudesdeEmpleados(){
+		List<SolicitudEmpleado> SolicitudEstudiante = new ArrayList<>();
+		for(SolicitudEmpleado e : misolicitud_e) {
+			if(e.getAplicante() instanceof Estudiante & e.isestado())
+				SolicitudEstudiante.add(e);
+		} 
+		return SolicitudEstudiante;
+	}
+	
+	public int getCantSolicitudesDeEstudiantePorCompania(){
+		int cant=0;
+		for(SolicitudCompania e : misolicitud_c) {
+			if(e.getTipo_de_empleado().equalsIgnoreCase("Universitario") )
+				cant++;
+		} 
+		return cant;
+	}
+	
+	public int  getCantSolicitudesDeTrabajadoresPorCompania(){
+		int cant =0;
+		for(SolicitudCompania e : misolicitud_c) {
+			if(e.getTipo_de_empleado().equalsIgnoreCase("Obrero") )
+				cant++;
+		} 
+		return cant;
+	}
+	
+	public int  getCantSolicitudesDeTecnicosPorCompania(){
+		int cant = 0;
+		for(SolicitudCompania e : misolicitud_c) {
+			if(e.getTipo_de_empleado().equalsIgnoreCase("Técnico") )
+				cant++;
+		} 
+		return cant;
+	}
+	
+	public List<SolicitudEmpleado> getSolicitudesDeTecnicos(){
+		List<SolicitudEmpleado> SolicitudesTecnicos = new ArrayList<>();
+		for(SolicitudEmpleado e : misolicitud_e) {
+			if(e.getAplicante() instanceof Tecnico && e.isestado())
+				SolicitudesTecnicos.add(e);
+		} 
+		return SolicitudesTecnicos;
+	}
+	
+	public List<SolicitudEmpleado> getSolicitudesDeTrabajadores(){
+		List<SolicitudEmpleado> SolicitudTrabajador=new ArrayList<>();
+		for(SolicitudEmpleado e : misolicitud_e) {
+			if(e.getAplicante() instanceof Trabajador && e.isestado())
+				SolicitudTrabajador.add(e);
+		} 
+		return SolicitudTrabajador;
+	}
+	
+	public List<SolicitudEmpleado> Emparejamiento(SolicitudCompania ReqCompania){
+		List<SolicitudEmpleado> myEmployees=new ArrayList<>();
+		List<SolicitudEmpleado> employeesThatApply=new ArrayList<>();
+		if(ReqCompania.getTipo_de_empleado().equalsIgnoreCase("Universitario")) 
+			myEmployees=this.getSolicitudesdeEmpleados();
+		else if(ReqCompania.getTipo_de_empleado().equalsIgnoreCase("T\u00E9cnico"))
+			myEmployees=this.getSolicitudesDeTecnicos();
+		else
+			myEmployees=this.getSolicitudesDeTrabajadores();
+		
+		for(SolicitudEmpleado e: myEmployees) {
+			if(getEmparejamientoPorcent(e,ReqCompania)>60) {
+				employeesThatApply.add(e);
+			}
+		}
+		
+		return employeesThatApply;
+		
+	}
+	
+	public float getEmparejamientoPorcent(SolicitudEmpleado ReqEmpleado, SolicitudCompania ReqCompania) {
+		float porcentaje=0;
+		float constante=ReqCompania.getLenguajes().size()/12;
+		if(ReqEmpleado.HabilidadesEx(ReqCompania.getHabilidades_requeridas())==true)
+			porcentaje+=19;
+		else
+			return 0;
+		if((ReqEmpleado.isDispmudarse()==true && ReqCompania.isDismudarse()==true) || ReqCompania.isDismudarse()==false)
+			porcentaje+=14;
+		if(ReqEmpleado.getAplicante().getProvincia().equalsIgnoreCase(ReqCompania.getCompania().getProvincia()) 
+				|| (ReqEmpleado.isDispmudarse() &&ReqEmpleado.getAplicante().getProvincia().equalsIgnoreCase(ReqCompania.getCompania().getProvincia())==false))
+			porcentaje+=13;
+		if((ReqEmpleado.isLicencia() && ReqCompania.isLicencia()) || ReqCompania.isLicencia()==false)
+			porcentaje+=12;
+		if((ReqEmpleado.isDispviajar() && ReqCompania.isDisviajes())|| ReqCompania.isDisviajes()==false)
+			porcentaje+=8;
+		if(ReqEmpleado.getSalariominimo()<=ReqCompania.getSalario_minimo())
+			porcentaje+=14;
+		if(ReqEmpleado.getHrsdetrabajo()>=ReqCompania.getHoras_de_trabajo())
+			porcentaje+=8;
+		porcentaje+=constante*CantidadDeLenguajesEq(ReqCompania.getLenguajes(),ReqEmpleado.getLenguajes());
+		return porcentaje;
+	}
+	
+	public float CantidadDeLenguajesEq(List<String> LengCompania, List<String> LengPersona) {
+		float cant=0;
+		for(String comp: LengCompania) {
+			for(String per: LengPersona) {
+				if (per.equalsIgnoreCase(comp))
+					cant++;
+			}
+		}
+		return cant;
+	}
+	
+	
+	public void EliminarTodasLasSolicitudesActP(Persona personaEliminada) {
+		Boolean ok=true;
+		int ind=0;
+		SolicitudEmpleado aux = null;
+		while(ok==true) {
+			for(SolicitudEmpleado er: CentroDeTrabajo.getInstance().getMisolicitud_e()) {
+				if(er.getAplicante().getId().equalsIgnoreCase(personaEliminada.getId()) && er.isestado()==true) {
+					aux=er;
+					ind++;
+					break;
+				}
+			}
+			if(ind==0)
+				ok=false;
+			else {
+				CentroDeTrabajo.getInstance().getMisolicitud_e().remove(aux);
+				ind=0;
+			}
+		}
+	}
+	
+	public void EliminarTodasLasSolicitudesActC(Compania companiaEliminada) {
+		Boolean ok=true;
+		int ind=0;
+		SolicitudCompania aux = null;
+		while(ok==true) {
+			for(SolicitudCompania er: CentroDeTrabajo.getInstance().getMisolicitud_c()) {
+				if(er.getCompania().getRnc().equalsIgnoreCase(companiaEliminada.getRnc()) && er.isEstado()==true) {
+					aux=er;
+					ind++;
+					break;
+				}
+			}
+			if(ind==0)
+				ok=false;
+			else {
+				CentroDeTrabajo.getInstance().getMisolicitud_c().remove(aux);
+				ind=0;
+			}
+		}
+	}
+	
+	public List<SolicitudCompania> getSolicitudesCompaniaPorId(Compania comp) {
+		List<SolicitudCompania> TSC = new ArrayList<>();
+		for(SolicitudCompania SoliC : misolicitud_c) {
+			if(SoliC.getCompania().getRnc().equalsIgnoreCase(comp.getRnc()) && SoliC.isEstado()==true) {
+				TSC.add(SoliC);
+			}
+		}
+		return TSC;
+	}
+	public List<SolicitudEmpleado> getSolicitudesEmpleadosPorId(Persona Persona) {
+		List<SolicitudEmpleado> TSE=new ArrayList<>();
+		for(SolicitudEmpleado SoliE : misolicitud_e) {
+			if(SoliE.getAplicante().getId().equalsIgnoreCase(Persona.getId()) && SoliE.isestado()==true) {
+				TSE.add(SoliE);
+			}
+		}
+		return TSE;
+	}
+
+	public int CantDeCompaniaporArea(String area) {
+		int cant=0;
+		for(Compania comp: micompania) {
+			if(comp.getLocalidad().equalsIgnoreCase(area))
+				cant++;
+		}
+		return cant;
+	}
 	
 	
 	
