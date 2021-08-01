@@ -10,7 +10,7 @@ public abstract class Persona implements Serializable{
 	protected String id;
 	protected String nombre;
 	protected String apellido;
-	protected String fecha;
+	protected Date fecha;
 	protected String direccion;
 	protected String correo;
 	protected String provincia;
@@ -18,12 +18,12 @@ public abstract class Persona implements Serializable{
 	protected String genero;
 	protected String estadocivil;
 	protected String telefono;
-	protected String estadotrabajo;
+	protected boolean estadotrabajo;
 	
 
 	
-	public Persona(String id, String nombre, String apellido, String fecha, String direccion, String correo,
-			String provincia, String ciudad, String genero, String estadocivil, String telefono, String estadotrabajo) {
+	public Persona(String id, String nombre, String apellido, Date fecha, String direccion, String correo,
+			String provincia, String ciudad, String genero, String estadocivil, String telefono) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -36,7 +36,7 @@ public abstract class Persona implements Serializable{
 		this.genero = genero;
 		this.estadocivil = estadocivil;
 		this.telefono = telefono;
-		this.estadotrabajo = estadotrabajo;
+		this.estadotrabajo = false;
 	}
 	
 	
@@ -58,10 +58,10 @@ public abstract class Persona implements Serializable{
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	public String getDireccion() {
@@ -106,10 +106,10 @@ public abstract class Persona implements Serializable{
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getEstadotrabajo() {
+	public boolean getEstadotrabajo() {
 		return estadotrabajo;
 	}
-	public void setEstadotrabajo(String estadotrabajo) {
+	public void setEstadotrabajo(boolean estadotrabajo) {
 		this.estadotrabajo = estadotrabajo;
 	}
 	

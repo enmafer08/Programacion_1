@@ -13,11 +13,10 @@ public class Trabajador extends Persona implements Serializable{
 	private int experiencia;
 	
 	
-	public Trabajador(String id, String nombre, String apellido, String fecha, String direccion, String correo,
-			String provincia, String ciudad, String genero, String estadocivil, String telefono, String estadotrabajo,
-			List<String> habilidades, int experiencia) {
-		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono,
-				estadotrabajo);
+	public Trabajador(String id, String nombre, String apellido, Date fecha, String direccion, String correo,
+			String provincia, String ciudad, String genero, String estadocivil, String telefono,int experiencia,
+			List<String> habilidades) {
+		super(id, nombre, apellido, fecha, direccion, correo, provincia, ciudad, genero, estadocivil, telefono);
 		this.habilidades = habilidades;
 		this.experiencia = experiencia;
 	}

@@ -96,18 +96,38 @@ public class SolicitudEmpleado implements Serializable {
 		SolicitudEmpleado.cod = cod;
 	}
 
-	private SolicitudEmpleado(String id, Persona aplicante, boolean estado, float salariominimo,
+	public SolicitudEmpleado(String id, Persona aplicante, float salariominimo,
 			List<String> lenguajes, int hrsdetrabajo, boolean dispviajar, boolean dispmudarse, boolean licencia) {
 		super();
 		this.id = id;
 		this.aplicante = aplicante;
-		this.estado = estado;
 		this.salariominimo = salariominimo;
 		this.lenguajes = lenguajes;
 		this.hrsdetrabajo = hrsdetrabajo;
 		this.dispviajar = dispviajar;
 		this.dispmudarse = dispmudarse;
 		this.licencia = licencia;
+	}
+	
+	public boolean HabilidadesEx(String HabilidadesReq) {
+		if(aplicante instanceof Estudiante) {
+			Estudiante Estudiante=(Estudiante)aplicante;
+			if(Estudiante.getCarrera().equalsIgnoreCase(HabilidadesReq))
+				return true;
+		}
+		else if(aplicante instanceof Tecnico) {
+			Tecnico Tecnico=(Tecnico)aplicante;
+			if(Tecnico.getArea().equalsIgnoreCase(HabilidadesReq))
+				return true;
+		}
+		else {
+			Trabajador Trabajador=(Trabajador)aplicante;
+			for(String s: Trabajador.getHabilidades()) {
+				if(s.equalsIgnoreCase(HabilidadesReq))
+					return true;
+			}
+		}
+		return false;
 	}
 
 }
