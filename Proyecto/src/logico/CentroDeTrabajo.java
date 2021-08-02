@@ -287,7 +287,7 @@ public class CentroDeTrabajo implements Serializable {
 		return cant;
 	}
 	
-	public List<SolicitudEmpleado> getSolicitudesdeEmpleados(){
+	public List<SolicitudEmpleado> getSolicitudesdeEstudiantes(){
 		List<SolicitudEmpleado> SolicitudEstudiante = new ArrayList<>();
 		for(SolicitudEmpleado e : misolicitud_e) {
 			if(e.getAplicante() instanceof Estudiante & e.isestado())
@@ -342,22 +342,22 @@ public class CentroDeTrabajo implements Serializable {
 	}
 	
 	public List<SolicitudEmpleado> Emparejamiento(SolicitudCompania ReqCompania){
-		List<SolicitudEmpleado> myEmployees=new ArrayList<>();
-		List<SolicitudEmpleado> employeesThatApply=new ArrayList<>();
+		List<SolicitudEmpleado> misEmpleados=new ArrayList<>();
+		List<SolicitudEmpleado> EmpleadosAplicantes=new ArrayList<>();
 		if(ReqCompania.getTipo_de_empleado().equalsIgnoreCase("Universitario")) 
-			myEmployees=this.getSolicitudesdeEmpleados();
+			misEmpleados=this.getSolicitudesdeEstudiantes();
 		else if(ReqCompania.getTipo_de_empleado().equalsIgnoreCase("T\u00E9cnico"))
-			myEmployees=this.getSolicitudesDeTecnicos();
+			misEmpleados=this.getSolicitudesDeTecnicos();
 		else
-			myEmployees=this.getSolicitudesDeTrabajadores();
+			misEmpleados=this.getSolicitudesDeTrabajadores();
 		
-		for(SolicitudEmpleado e: myEmployees) {
+		for(SolicitudEmpleado e: misEmpleados) {
 			if(getEmparejamientoPorcent(e,ReqCompania)>60) {
-				employeesThatApply.add(e);
+				EmpleadosAplicantes.add(e);
 			}
 		}
 		
-		return employeesThatApply;
+		return EmpleadosAplicantes;
 		
 	}
 	
