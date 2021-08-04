@@ -49,7 +49,6 @@ public class Anotar extends JDialog {
 	private DefaultTableModel modelo;
 	
 	public Anotar(CentroDeTrabajo CentroDeTrabajo, int show) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Anotar.class.getResource("/logo.png")));
 		setTitle("Anotar");
 		this.listpersona=CentroDeTrabajo.getMipersona();
 		setModalityType(ModalityType.APPLICATION_MODAL);

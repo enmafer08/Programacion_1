@@ -90,7 +90,6 @@ public class RegistroSolicitudDeCompania extends JDialog {
 	public RegistroSolicitudDeCompania(SolicitudCompania req) {
 		LenguajesModel = new DefaultListModel<String>();
 		setModalityType(ModalityType.APPLICATION_MODAL);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroSolicitudDeCompania.class.getResource("/logo.png")));
 		setResizable(false);
 		setTitle("Solicitar empleados");
 		setBounds(100, 100, 680, 735);

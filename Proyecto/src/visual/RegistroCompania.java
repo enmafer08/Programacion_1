@@ -51,7 +51,6 @@ public class RegistroCompania extends JDialog {
 			this.modificarEstado=0;
 		setTitle("Registrar Empresa");
 		setModalityType(ModalityType.APPLICATION_MODAL);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroCompania.class.getResource("/logo.png")));
 		setBounds(100, 100, 581, 581);
 		setResizable(false);
 		setLocationRelativeTo(null);

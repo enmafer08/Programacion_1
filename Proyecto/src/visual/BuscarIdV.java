@@ -36,7 +36,6 @@ public class BuscarIdV extends JDialog {
 
 
 	public BuscarIdV(String id,CentroDeTrabajo CentroDeTrabajo,int status) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarIdV.class.getResource("/logo.png")));
 		this.mi_Id=id;
 		this.miestado=status;
 		setTitle("Eliminar");

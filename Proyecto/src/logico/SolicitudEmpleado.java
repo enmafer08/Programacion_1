@@ -101,6 +101,7 @@ public class SolicitudEmpleado implements Serializable {
 		super();
 		this.id = id;
 		this.aplicante = aplicante;
+		this.estado = true;
 		this.salariominimo = salariominimo;
 		this.lenguajes = lenguajes;
 		this.hrsdetrabajo = hrsdetrabajo;

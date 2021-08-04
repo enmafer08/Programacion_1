@@ -18,7 +18,7 @@ public class Compania implements Serializable{
     
     
     public Compania(String nombre, String localidad, String direccion, String provincia, String ciudad, String telefono,
-            String correo) {
+            String correo, String rnc) {
         super();
         this.nombre = nombre;
         this.localidad = localidad;
@@ -27,6 +27,7 @@ public class Compania implements Serializable{
         this.ciudad = ciudad;
         this.telefono = telefono;
         this.correo = correo;
+        this.rnc = rnc;
     }
 
 

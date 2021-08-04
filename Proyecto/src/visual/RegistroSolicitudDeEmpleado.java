@@ -80,7 +80,6 @@ public class RegistroSolicitudDeEmpleado extends JDialog {
 	  Create the dialog.
 	 */
 	public RegistroSolicitudDeEmpleado(SolicitudEmpleado req) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage( RegistroSolicitudDeEmpleado.class.getResource("/logo.png")));
 		LenguajesModel = new DefaultListModel<String>();
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setResizable(false);

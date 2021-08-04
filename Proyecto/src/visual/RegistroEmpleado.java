@@ -87,7 +87,7 @@ public class RegistroEmpleado extends JDialog {
 	private JComboBox<String>  combo_Area;
 	
 	public RegistroEmpleado(Persona mod) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroEmpleado.class.getResource("/logo.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroEmpleado.class.getResource("/logo.png")));
 		elegir = -1;
 		HabilidadesS = new ArrayList<String>();
 		setTitle("Registar Empleado");
@@ -374,20 +374,20 @@ public class RegistroEmpleado extends JDialog {
 		Panel_InformaciondeTrabajo.add(lblProfesion);
 		
 		JLabel lblStudent = new JLabel("New label");
-		Image Estudiante = new ImageIcon(this.getClass().getResource("/Estudiante.png")).getImage();
-		lblStudent.setIcon(new ImageIcon(Estudiante));
+		//Image Estudiante = new ImageIcon(this.getClass().getResource("/Estudiante.png")).getImage();
+		//lblStudent.setIcon(new ImageIcon(Estudiante));
 		lblStudent.setBounds(20, 116, 161, 141);
 		Panel_InformaciondeTrabajo.add(lblStudent);
 		
 		JLabel lblTech = new JLabel("");
-		Image tech = new ImageIcon(this.getClass().getResource("/Tecnico.png")).getImage();
-		lblTech.setIcon(new ImageIcon(tech));
+		//Image tech = new ImageIcon(this.getClass().getResource("/Tecnico.png")).getImage();
+		//lblTech.setIcon(new ImageIcon(tech));
 		lblTech.setBounds(243, 116, 161, 141);
 		Panel_InformaciondeTrabajo.add(lblTech);
 		
 		JLabel lblWorker = new JLabel("");
-		Image Trabajador = new ImageIcon(this.getClass().getResource("/Trabajador.png")).getImage();
-		lblWorker.setIcon(new ImageIcon(Trabajador));
+		//Image Trabajador = new ImageIcon(this.getClass().getResource("/Trabajador.png")).getImage();
+		//lblWorker.setIcon(new ImageIcon(Trabajador));
 		lblWorker.setBounds(470, 116, 161, 141);
 		Panel_InformaciondeTrabajo.add(lblWorker);
 		

@@ -63,7 +63,7 @@ public class EmparejamientoEmpleado extends JDialog {
 		solicitudes = new ArrayList<SolicitudCompania>();
 		selecciones = null;
 		c = null;
-		setIconImage(Toolkit.getDefaultToolkit().getImage(EmparejamientoEmpleado.class.getResource("/logo.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(EmparejamientoEmpleado.class.getResource("/logo.png")));
 		setBounds(100, 100, 981, 650);
 		getContentPane().setLayout(new BorderLayout());
 		panelcontenido.setBackground(Color.WHITE);
