@@ -43,7 +43,6 @@ public class AnotarSolicitudes extends JDialog {
 
 	public AnotarSolicitudes(Boolean status,String id) {
 		//False=companyReq, TRUE=employeeReq
-		setIconImage(Toolkit.getDefaultToolkit().getImage(AnotarSolicitudes.class.getResource("/logo.png")));
 		setBounds(100, 100, 718, 343);
 		setResizable(false);
 		setLocationRelativeTo(null);

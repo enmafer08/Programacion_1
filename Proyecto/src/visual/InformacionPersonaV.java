@@ -42,7 +42,6 @@ public class InformacionPersonaV extends JDialog {
 	private JTextField txtestadotrabajo;
 	
 	public InformacionPersonaV(Persona Persona) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(InformacionPersonaV.class.getResource("/logo.png")));
 		setTitle("Datos");
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setBounds(100, 100, 394, 497);

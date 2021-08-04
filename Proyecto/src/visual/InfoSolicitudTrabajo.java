@@ -70,7 +70,7 @@ public class InfoSolicitudTrabajo extends JDialog {
 	private JButton btn_nuevobtn;
 	
 	public InfoSolicitudTrabajo(SolicitudEmpleado aux) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(InfoSolicitudTrabajo.class.getResource("/logo.png")));
+		
 		setTitle("Datos Laborales");
 		setBounds(100, 100, 420, 546);
 		getContentPane().setLayout(new BorderLayout());
