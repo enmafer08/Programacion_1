@@ -299,8 +299,6 @@ public class InfoSolicitudTrabajo extends JDialog {
 		
 		
 		if(p instanceof Trabajador) {
-			Image Trabajador = new ImageIcon(this.getClass().getResource("/Trabajador.png")).getImage();
-			lbl_imagen.setIcon(new ImageIcon(Trabajador));
 			lbl_persona.setText("Obrero");
 			paneltrabajador.setVisible(true);
 			pnlTech.setVisible(false);
@@ -309,8 +307,6 @@ public class InfoSolicitudTrabajo extends JDialog {
 		}
 		
 		if(p instanceof Estudiante) {
-			Image Estudiante = new ImageIcon(this.getClass().getResource("/Estudiante.png")).getImage();
-			lbl_imagen.setIcon(new ImageIcon(Estudiante));
 			lbl_persona.setText("Egresado");
 			pnlestudiantes.setVisible(true);
 			pnlTech.setVisible(false);
@@ -319,8 +315,6 @@ public class InfoSolicitudTrabajo extends JDialog {
 		}
 		
 		if(p instanceof Tecnico) {
-			Image tech = new ImageIcon(this.getClass().getResource("/Tecnico.png")).getImage();
-			lbl_imagen.setIcon(new ImageIcon(tech));
 			lbl_persona.setText("Técnico");
 			pnlTech.setVisible(true);
 			pnlestudiantes.setVisible(false);
