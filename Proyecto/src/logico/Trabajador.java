@@ -33,6 +33,16 @@ public class Trabajador extends Persona implements Serializable{
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
 	}
-	
+
+	public boolean hablidadesExist(String habilidad) {
+		boolean Encontrado=false;
+		for(int i=0;i<habilidades.size();i++) {
+			if(habilidades.get(i).equalsIgnoreCase(habilidad)) {
+				Encontrado=true;
+				break;
+			}
+		}
+		return Encontrado;
+	}	
 	
 }

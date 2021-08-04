@@ -257,8 +257,6 @@ public class CentroDeTrabajo implements Serializable {
 		return cant;
 	}
 	
-	
-	
 	public void modificarPersona(Persona mod, Persona aux) {
 		int index = mipersona.indexOf(mod);
 		mipersona.add(index, aux);
